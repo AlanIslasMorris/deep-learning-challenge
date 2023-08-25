@@ -17,30 +17,39 @@
 First, the dataset was loaded and explored to understand its structure and the types of data it contains.
 
 Columns that were not beneficial, like 'EIN' and 'NAME', were dropped.
+
   ###Those columns are considered identifiers that are not useful to predict the target variable
   
 Categorical variables like 'APPLICATION_TYPE' and 'CLASSIFICATION' were binned 
+
   ###This avoids having a very large amount of columns and keeps only the most relevant APPLICATION_TYPE and CLASSIFICATIONs to the model.
   
 Categorical variables in the dataset were converted into binary features using pd.get_dummies()
+
   ###This is the format that could be used as input for the neural network. 
   
 The dataset was split into features (X) and target (y) arrays.
+
   ###E.g.'IS_SUCCESSFUL' was identified as the target variable, and the remaining columns were considered as features for the model. }
   
 Training and testing sets were created using the train_test_split function from scikit-learn.
+
   ###This ensures that the model can be validated on unseen data after training.
   
 Features were scaled using the StandardScaler to normalize the data.
+
   ###This ensures that no variable has more influence than another.
   
 Define model architecture: 
+
   ###The architecture included an input layer, two hidden layers with ReLU activation functions, and an output layer with a sigmoid activation function for binary classification.
   
 Validation:
+
   ###After training, the model was evaluated using metrics like loss and accuracy on the test set. These metrics provide a quantitative measure of how well the model is likely to perform on unseen data.
 
 ##Interpretation
+
 The model was able to predict the outcome in unseen data with an accuracy of 72%.
 
 ![image](https://github.com/AlanIslasMorris/deep-learning-challenge/assets/70079035/3e67cfc1-e455-4283-9556-26cff1f3473d)
@@ -48,19 +57,23 @@ The model was able to predict the outcome in unseen data with an accuracy of 72%
 #Optimization
 
  Increasing neurons,
+ 
     *I tried to use as much as 100 neurons for the first 3; then 50 for the next one; then 30 for the 5th onte and 1 for the output layer.
     * First I just increased the neurons from 50 to 80; then up to 100 and I started adding layers.
     
  Increasing layers, 
+ 
     * I tried to add layers one by one until I got to 5 layers.
     
  Changing activation function,
+ 
     * I tried relu for the first three layers, then tanh then sigmoid
     * I tried relu for the first two layers, then tanh then sigmoid
     * I tried relu for the first two layers, then sigmoid then sigmoid
     * I tried relu for the first 3 layers, then sigmoid for the output layer
 
 Reducing the amount of unique values in CLASSIFICATION and APPLICATION_TYPE columns
+
     * For the classification column I changed the number of unique values by changing the list to replace e.g. filtered_counts_less_than_2 = classification_counts[classification_counts <= 2] instead of less than 1; then I tried less than 5 and less than 6.
     
     * For the APPLICATION TYPE column I tried:
