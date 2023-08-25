@@ -18,37 +18,37 @@ First, the dataset was loaded and explored to understand its structure and the t
 
 Columns that were not beneficial, like 'EIN' and 'NAME', were dropped.
 
-  ###Those columns are considered identifiers that are not useful to predict the target variable
+  *Those columns are considered identifiers that are not useful to predict the target variable
   
 Categorical variables like 'APPLICATION_TYPE' and 'CLASSIFICATION' were binned 
 
-  ###This avoids having a very large amount of columns and keeps only the most relevant APPLICATION_TYPE and CLASSIFICATIONs to the model.
+  *This avoids having a very large amount of columns and keeps only the most relevant APPLICATION_TYPE and CLASSIFICATIONs to the model.
   
 Categorical variables in the dataset were converted into binary features using pd.get_dummies()
 
-  ###This is the format that could be used as input for the neural network. 
+  *This is the format that could be used as input for the neural network. 
   
 The dataset was split into features (X) and target (y) arrays.
 
-  ###E.g.'IS_SUCCESSFUL' was identified as the target variable, and the remaining columns were considered as features for the model. }
+  *E.g.'IS_SUCCESSFUL' was identified as the target variable, and the remaining columns were considered as features for the model. }
   
 Training and testing sets were created using the train_test_split function from scikit-learn.
 
-  ###This ensures that the model can be validated on unseen data after training.
+  *This ensures that the model can be validated on unseen data after training.
   
 Features were scaled using the StandardScaler to normalize the data.
 
-  ###This ensures that no variable has more influence than another.
+  *This ensures that no variable has more influence than another.
   
 Define model architecture: 
 
-  ###The architecture included an input layer, two hidden layers with ReLU activation functions, and an output layer with a sigmoid activation function for binary classification.
+  *The architecture included an input layer, two hidden layers with ReLU activation functions, and an output layer with a sigmoid activation function for binary classification.
   
 Validation:
 
-  ###After training, the model was evaluated using metrics like loss and accuracy on the test set. These metrics provide a quantitative measure of how well the model is likely to perform on unseen data.
+  *After training, the model was evaluated using metrics like loss and accuracy on the test set. These metrics provide a quantitative measure of how well the model is likely to perform on unseen data.
 
-##Interpretation
+*Interpretation
 
 The model was able to predict the outcome in unseen data with an accuracy of 72%.
 
